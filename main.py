@@ -10,7 +10,7 @@ import asyncio
 intents = discord.Intents.default()
 intents.message_content = True
 client = commands.Bot(command_prefix="!", case_insensitive=True, intents=intents)
-bot_secret = 'MTA0OTM5MDI5NzYyMjI3MDA0NA.Gs8aZU.bpBtd8Gxsor5TxFJ0gIVOXT3j3bGT2ZD9MGHcE'
+BOT_SECRET = os.environ['BOT_SECRET']
 
 # chatGPT config
 
@@ -38,7 +38,7 @@ async def ask(ctx, *arg):
         print(e)
 
 # run bot
-client.run(bot_secret)
+client.run(BOT_SECRET)
 
 
 
