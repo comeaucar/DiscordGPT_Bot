@@ -1,10 +1,9 @@
 from revChatGPT.revChatGPT import Chatbot
 import json
 import discord
-from discord.ext import commands, tasks
-import requests
+from discord.ext import commands
 import os
-import asyncio
+
 
 # bot setup
 intents = discord.Intents.default()
