@@ -50,6 +50,16 @@ async def ask(ctx, *arg):
     print("Something went wrong")
     print(e)
 
+# reset chat
+@client.command()
+async def reset(ctx, arg):
+  try:
+    chatbot.reset_chat()
+    await ctx.send("Chat was reset")
+  except Exception as e:
+    await ctx.send("An error occurred during the request")
+    print(e)
+
 
 # run bot
 client.run(BOT_SECRET)
