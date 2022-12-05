@@ -40,9 +40,13 @@ async def ask(ctx, *arg):
       chatbot.refresh_session()
       prompt = " ".join(arg)
       resp = chatbot.get_chat_response(prompt, output="text")
-      print(resp)
-      await ctx.send(resp['message'])
+      if (len(resp['message']) > 1999):
+        await ctx.send((resp['message'])[:1999])
+        await ctx.send("-" + (resp['message'])[1999:])
+      else:
+        await ctx.send(resp['message'])
   except Exception as e:
+    await ctx.send("An error occurred during the request")
     print("Something went wrong")
     print(e)
 
