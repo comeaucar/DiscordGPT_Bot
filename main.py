@@ -14,6 +14,12 @@ BOT_SECRET = os.environ['BOT_SECRET']
 # chatGPT config
 
 with open("config.json", "r") as f: config = json.load(f)
+
+config['Authorization'] = os.environ['AUTH']
+config['session_token'] = os.environ['SESS_TOKEN']
+config['email'] = os.environ['EMAIL']
+config['password'] = os.environ['PASSWORD']
+
 chatbot = Chatbot(config, conversation_id=None)
 
 # on ready
